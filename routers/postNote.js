@@ -39,10 +39,12 @@ notes.post('/', (req, res) => {
 notes.delete('/:id', (req, res) => {
     // passing id as a req. parameter;
     const { id } = req.params;
+
     readFromFile('./db/db.json').then((data) => {
         // parsing the data read from the database;
         note = JSON.parse(data);
         // looking for the unique index match;
+
         for (let i = 0; i < note.length; i++) {
             // if index match is found;
             if (note[i].id === id){
@@ -52,6 +54,7 @@ notes.delete('/:id', (req, res) => {
                 writeToFile('./db/db.json', note);
             };
         };
+        
         res.json(note);
     });
 });
