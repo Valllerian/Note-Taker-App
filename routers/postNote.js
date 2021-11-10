@@ -7,12 +7,16 @@ const uniqId = require('uniqid');
 
 // getting info from the database to later display on the page;
 notes.get('/', (_, res) => {
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
+    // added a catch for an error case;
+    .catch((err) => console.log(err))
 });
 
 notes.post('/', (req, res) => {
+
     // passing our request in the const;
     const { title, text } = req.body;
+
     // if our request has title and text in it, unique id will be assigned;
     if (req.body) {
         const newNote = {
@@ -31,6 +35,7 @@ notes.post('/', (req, res) => {
     }
 });
 
+// bonus task - write a delete method to get rid of a specific note;
 notes.delete('/:id', (req, res) => {
     // passing id as a req. parameter;
     const { id } = req.params;
@@ -45,10 +50,10 @@ notes.delete('/:id', (req, res) => {
                 note.splice(i, 1);
                 //the rest of notes are written back to the database;
                 writeToFile('./db/db.json', note);
-            }
-        }
+            };
+        };
         res.json(note);
-    })
-})
+    });
+});
 
 module.exports = notes;
