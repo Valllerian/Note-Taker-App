@@ -8,16 +8,19 @@ const path = require('path');
 const api = require('./routers/index')
 
 // assigning the port number;
-const PORT = process.envPORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // initializing express;
 const app = express();
 
+// setting up a middleware to show the static page
+app.use(express.static('public'));
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use('/api', api);
 
-// setting up a middleware to show the static page
-app.use(express.static('public'));
 
 // setting up a get method fot the root path
 app.get('/', (_, res) => {
