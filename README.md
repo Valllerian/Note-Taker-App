@@ -52,6 +52,8 @@ Delete button is available and deletes the note from the list.
 
 <h3>Application`s usage video-walkthrough:</h3>
 
+https://youtu.be/NX_2Kk0WMzc
+
 ## License
     
 
