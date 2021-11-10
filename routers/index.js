@@ -1,14 +1,11 @@
+// linking express and postNotes file;
 const express = require('express');
-const path = require('path'); 
 
+const notes = require('./postNote');
+// express is initialized;
 const app = express();
 
-app.get('/notes', (_, res) =>
-  res.sendFile(path.join(__dirname, '../public/notes.html'))
-);
-
-app.get('*', (_, res) => 
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-);
+// notes path is connected through the postNote.js;
+app.use('/notes', notes);
 
 module.exports = app;
