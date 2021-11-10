@@ -2,6 +2,9 @@
 const notes = require('express').Router();
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsFunctions');
 
+// importing the database
+const database = require("../db/db.json");
+
 // using uniqId npm to assign a unique id to each note;
 const uniqId = require('uniqid');
 
