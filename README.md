@@ -24,9 +24,31 @@ This application  uses an Express.js back end and will save and retrieve note da
     
 ## Usage 
     
-- Run the app by entering:  `node index.js`;
+- Run the app by entering:  `node index.js` | use the app deployed on heroku;
 
+Main page of the app has a button to redirect the user to the main interface:
 
+<br>
+<img alt="Main page" src="assets/images/image01.jpg" />
+<br>
+
+Note title and Note text input line are available and has to be filled up with user input in order to save the note.
+
+<br>
+<img alt="Note interface" src="assets/images/image02.jpg" />
+<br>
+
+When note is saved it can be recalled at any time to be displayed at the page. 
+
+<br>
+<img alt="Note recalled" src="assets/images/image03.jpg" />
+<br>
+
+Delete button is available and deletes the note from the list.
+
+<br>
+<img alt="Note deleted" src="assets/images/image04.jpg" />
+<br>
 
 <h3>Application`s usage video-walkthrough:</h3>
 

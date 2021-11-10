@@ -7,7 +7,9 @@ const path = require('path');
 // importing our routes;
 const api = require('./routers/index')
 
-// assigning the port number;
+// use port 3001 unless there exists a preconfigured port
+// process.env.PORT 
+// https://stackoverflow.com/questions/18864677/what-is-process-env-port-in-node-js
 const PORT = process.env.PORT || 3001;
 
 // initializing express;
