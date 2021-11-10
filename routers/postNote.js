@@ -10,4 +10,25 @@ notes.get('/', (_, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
+notes.post('/', (req, res) => {
+    // passing our request in the const;
+    const { title, text } = req.body;
+    // if our request has title and text in it, unique id will be assigned;
+    if (req.body) {
+        const newNote = {
+            title,
+            text,
+            id: uniqId(),
+        };
+        // appending newNote to the database;
+        readAndAppend(newNote, './db/db.json');
+        console.log(`Note is added to the database.`);
+        res.json(`Note is added to the database.`);
+    }
+    else {
+        // if error occurs:
+        res.error('Error in adding note');
+    }
+});
+
 module.exports = notes;
