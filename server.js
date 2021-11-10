@@ -1,19 +1,20 @@
+// linking express library;
 const express = require('express');
 
+// linking path library to be able to use __dirname;
 const path = require('path');
+
+// importing our routes;
 const api = require('./routers/index')
 
-const notes = require('./routers/postNote')
-
+// assigning the port number;
 const PORT = process.envPORT || 3001;
 
+// initializing express;
 const app = express();
 
 app.use(express.json());
-
 app.use('/api', api);
-
-
 
 // setting up a middleware to show the static page
 app.use(express.static('public'));
