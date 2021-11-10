@@ -1,7 +1,7 @@
 // linking express and postNotes file;
 const express = require('express');
 
-const notes = require('./postNote');
+const notes = require('./ApiRoutes');
 // express is initialized;
 const app = express();
 

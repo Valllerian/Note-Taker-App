@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');
 
 // importing our routes;
-const api = require('./routers/index')
+const api = require('./routers/htmlRoutes')
 
 // use port 3001 unless there exists a preconfigured port
 // process.env.PORT 

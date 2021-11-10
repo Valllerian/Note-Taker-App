@@ -41,25 +41,15 @@ notes.post('/', (req, res) => {
 // bonus task - write a delete method to get rid of a specific note;
 notes.delete('/:id', (req, res) => {
     // passing id as a req. parameter;
-    const { id } = req.params;
-
+    const id = req.params.id;
     readFromFile('./db/db.json').then((data) => {
         // parsing the data read from the database;
         note = JSON.parse(data);
-        // looking for the unique index match;
-
-        for (let i = 0; i < note.length; i++) {
-            // if index match is found;
-            if (note[i].id === id){
-                //removing note from the array;
-                note.splice(i, 1);
-                //the rest of notes are written back to the database;
-                writeToFile('./db/db.json', note);
-            };
-        };
-        
+        // looking for the unique index match and filtering it out;
+        const newNotes = note.filter((note) => note.id != id);
+        // writing to the db;
+        writeToFile('./db/db.json', newNotes); });
         res.json(note);
     });
-});
 
 module.exports = notes;
