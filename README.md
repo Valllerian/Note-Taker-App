@@ -13,6 +13,8 @@ This application  uses an Express.js back end and will save and retrieve note da
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Links](#links)
+- [Resources](#resources)
     
 ## Installation
     
@@ -62,3 +64,10 @@ N/A
 - Feel free to add any issues and contact me at valeriibihun.co@gmail.com if you have any questions;
 
 - Follow my code: https://github.com/valllerian;
+
+
+## Links
+
+Deployed Heroku Site: 
+
+## Resources
